@@ -34,7 +34,7 @@ namespace snail
             do
             {
                 intPVRestants = CONST_INT_PV_MAX - intPositionX;
-                Console.MoveBufferArea(intPositionX, intPositionY, 4,1, intPositionX + 1, intPositionY);
+                Console.MoveBufferArea(intPositionX, intPositionY, CONST_STRING_ESCARGOT_VIVANT.Length,1, intPositionX + 1, intPositionY);
                 Console.CursorVisible = false;
                 intPositionX++;
                 Thread.Sleep(CONST_INT_VITESSE);
