@@ -9,5 +9,7 @@ namespace ParaClub
 {
     internal class Para
     {   
+        // Déclaration de la structure
+
     }
 }

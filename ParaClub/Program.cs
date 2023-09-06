@@ -18,6 +18,9 @@ namespace ParaClub
             // Disable cursor
             Console.CursorVisible = false;
 
+            // Déclaration des variables
+            ConsoleKeyInfo keyPressed;
+
             Plane plane = new Plane(ConsoleColor.Blue);
 
 
@@ -31,6 +34,25 @@ namespace ParaClub
 
                 // Temporiser
                 Thread.Sleep(10);
+
+                if (Console.KeyAvailable)
+                {
+                    keyPressed = Console.ReadKey(false);
+                    switch (keyPressed.Key)
+                    {
+                        case ConsoleKey.Escape:
+                            {
+                                Environment.Exit(0);
+                                break;
+                            }
+                        case ConsoleKey.Spacebar:
+                            {
+
+                                break;
+                            }
+                    }
+
+                }
             }
         }
     }
