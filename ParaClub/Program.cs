@@ -17,19 +17,21 @@ namespace ParaClub
 
             Plane plane = new Plane(ConsoleColor.Blue);
 
+
             while (true)
             {
                 // Modifier le modèle (ce qui *est*)
                 plane.update();
 
-
-                // Modifier ce que l'on *voit*
                 Console.Clear();
                 plane.show();
 
                 // Temporiser
                 Thread.Sleep(100);
             }
+
+
+
         }
     }
 }

@@ -37,16 +37,27 @@ namespace ParaClub
         {
             Console.ForegroundColor = _color;
 
-            for(int i = 0; i < view.Length; i++)
+            for (int i = 0; i < view.Length; i++)
             {
-                Console.SetCursorPosition(_y, i+_x);
+                Console.SetCursorPosition(_x, i + _y);
                 Console.Write(view[i]);
             }
+
         }
 
         public void update()
         {
-            Console.MoveBufferArea(this._x, this._y, view.Length, 6, this._y++, this._x);
+            Console.MoveBufferArea(this._x, this._y, view.Length, 6, this._x++, this._y);
+            if (view.Length + _y > Config.SCREEN_WIDTH)
+            {
+                if (this._x == Config.SCREEN_WIDTH - 1)
+                {
+                    this._x = 0;
+                }
+
+                Console.MoveBufferArea(this._x, Config.SCREEN_WIDTH, view.Length, 6, this._x++, this._y);
+            }
+
         }
     }
 }
