@@ -10,8 +10,9 @@ namespace ParaClub
     public class Plane
     {
         // Déclaration des variable
-        public int _x;
         public int _y;
+        public int _x;
+        public int _compteur;
 
         private ConsoleColor _color;
 
@@ -28,8 +29,8 @@ namespace ParaClub
 
         public Plane(ConsoleColor color)
         {
-            _x = 0;
             _y = 2;
+            _x = 2;
             _color = color;
         }
 
@@ -39,25 +40,18 @@ namespace ParaClub
 
             for (int i = 0; i < view.Length; i++)
             {
-                Console.SetCursorPosition(_x, i + _y);
+                Console.SetCursorPosition(_x + _compteur, i + _y);
                 Console.Write(view[i]);
             }
-
         }
 
         public void update()
         {
-            Console.MoveBufferArea(this._x, this._y, view.Length, 6, this._x++, this._y);
-            if (view.Length + _y > Config.SCREEN_WIDTH)
+            _compteur++;
+            if (this._compteur == Console.WindowWidth - 2)
             {
-                if (this._x == Config.SCREEN_WIDTH - 1)
-                {
-                    this._x = 0;
-                }
-
-                Console.MoveBufferArea(this._x, Config.SCREEN_WIDTH, view.Length, 6, this._x++, this._y);
+                this._compteur = 0;
             }
-
         }
     }
 }

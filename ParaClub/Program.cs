@@ -15,6 +15,9 @@ namespace ParaClub
             Console.WindowHeight = Config.SCREEN_HEIGHT;
             Console.WindowWidth = Config.SCREEN_WIDTH;
 
+            // Disable cursor
+            Console.CursorVisible = false;
+
             Plane plane = new Plane(ConsoleColor.Blue);
 
 
@@ -27,11 +30,12 @@ namespace ParaClub
                 plane.show();
 
                 // Temporiser
-                Thread.Sleep(100);
+                Thread.Sleep(10);
             }
 
 
 
         }
+        
     }
 }
