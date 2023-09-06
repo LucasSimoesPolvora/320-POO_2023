@@ -32,10 +32,6 @@ namespace ParaClub
                 // Temporiser
                 Thread.Sleep(10);
             }
-
-
-
         }
-        
     }
 }
